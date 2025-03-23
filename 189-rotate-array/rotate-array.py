@@ -45,10 +45,14 @@ class Solution:
         # reverse(0,k-1)
         # reverse(k,n)
         #
-        n = len(nums)
-        k %= n
-        rotated=[0]*n
-        for i in range(n):
-            rotated[(i+k)%n] = nums[i]
-        for i in range(n):
-            nums[i] = rotated[i]
+        # n = len(nums)
+        # k %= n
+        # rotated=[0]*n
+        # for i in range(n):
+        #     rotated[(i+k)%n] = nums[i]
+        # for i in range(n):
+        #     nums[i] = rotated[i]
+        #
+        k %= len(nums)
+        if k!=0:
+            nums[:k],nums[k:]= nums[-k:], nums[:-k]
