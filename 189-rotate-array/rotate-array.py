@@ -33,14 +33,22 @@ class Solution:
         # for i in range(k):
         #      nums.insert(0,nums.pop())
         #
-        k %= len(nums)
-        n=len(nums)-1
-        def reverse(left,right):
-            while left < right:
-                nums[left], nums[right] = nums[right], nums[left]
-                left+=1
-                right-=1
+        # k %= len(nums)
+        # n=len(nums)-1
+        # def reverse(left,right):
+        #     while left < right:
+        #         nums[left], nums[right] = nums[right], nums[left]
+        #         left+=1
+        #         right-=1
         
-        reverse(0,n)
-        reverse(0,k-1)
-        reverse(k,n)
+        # reverse(0,n)
+        # reverse(0,k-1)
+        # reverse(k,n)
+        #
+        n = len(nums)
+        k %= n
+        rotated=[0]*n
+        for i in range(n):
+            rotated[(i+k)%n] = nums[i]
+        for i in range(n):
+            nums[i] = rotated[i]
