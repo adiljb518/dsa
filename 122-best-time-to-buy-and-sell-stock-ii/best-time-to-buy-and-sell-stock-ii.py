@@ -20,5 +20,6 @@ class Solution:
             if prices[i] > prices[i-1]:
                 profit += prices[i]-prices[i-1]
         return profit
+        #we could also find peaks and valleys to get differences between them for overall profit
 
 
